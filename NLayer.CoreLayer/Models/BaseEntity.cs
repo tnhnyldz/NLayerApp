@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.CoreLayer
+namespace NLayer.CoreLayer.Models
 {
     public abstract class BaseEntity
     {
