@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using NLayer.API.Filters;
 using NLayer.CoreLayer.Services;
 
 namespace NLayer.API.Controllers
