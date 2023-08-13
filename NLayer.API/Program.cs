@@ -2,6 +2,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLayer.API.Filters;
+using NLayer.API.Middlewares;
 using NLayer.CoreLayer.Repositories;
 using NLayer.CoreLayer.Services;
 using NLayer.CoreLayer.UnýtOfWorks;
@@ -55,6 +56,9 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 
 
 //MiddleWares
+//uygulamaya bir rew gelirse aþama aþama middlewarelardan geçer.
+//req ilk geldiðinde middleware kýsmýna girer bir de response oluþurken girer
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -65,6 +69,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//kendý mýddlewareýmýz
+app.UseCustomException();
 
 app.UseAuthorization();
 
