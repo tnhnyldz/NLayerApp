@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLayer.API.Filters;
 using NLayer.API.Middlewares;
+using NLayer.CoreLayer.DTOs;
 using NLayer.CoreLayer.Repositories;
 using NLayer.CoreLayer.Services;
 using NLayer.CoreLayer.UnýtOfWorks;
@@ -20,6 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 //filter araya girecek
 builder.Services.AddControllers(options =>options.Filters.Add(new ValidateFilterAttribute()))
     .AddFluentValidation(x=>x.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
+
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     //apý tarafýnda bu default aktýftý kapattýk
@@ -30,6 +32,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
