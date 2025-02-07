@@ -12,7 +12,7 @@ namespace NLayer.Repository.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        //protected beacuse we will write specified entity classes
+        //protected beacuse we will write specified entity classes that inherits generic repository
         protected readonly AppDbContext _context;
 
         private readonly DbSet<T> _dbSet;
