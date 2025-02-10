@@ -49,10 +49,13 @@ This project follows **N Layer Architecture** and **Clean Architecture** princip
 
 N Layer Architecture separates the application into functional layers to improve modularity and maintainability. This project includes the following layers:
 
-- **Presentation Layer**: Handles user interface and API endpoints.
-- **Business Logic Layer**: Manages the business rules and logic.
-- **Data Access Layer**: Handles database and data operations.
-
+- **Caching Layer**
+- **Api Logic Layer**
+- **CoreLayer Layer**
+- **Repository Layer**
+- **Service Layer**
+-  **UI Layer**
+  
 ### 📌 Clean Architecture
 
 Clean Architecture enforces strict dependency rules, ensuring that business rules remain independent of the system’s infrastructure. This results in a more maintainable, scalable, and testable application.
